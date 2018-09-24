@@ -11,11 +11,12 @@ class CustomString
 		static string* GetArray(string, string);
 
 	public:
-		CustomString();
+		CustomString() {}
+		~CustomString() { this->str.clear(); }
+
 		void ReadFromKeyboard();
 		string GetStr();
 		Matrix* GetMatrix(CustomString*);
 		static Matrix* GetMatrix(CustomString*, CustomString*);
-		~CustomString();
 };
 

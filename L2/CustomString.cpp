@@ -28,8 +28,6 @@ string* CustomString::GetArray(string str1, string str2)
 	return res;
 }
 
-CustomString::CustomString() { }
-
 void CustomString::ReadFromKeyboard()
 {
 	cout << "¬ведите строку: ";
@@ -55,9 +53,4 @@ Matrix* CustomString::GetMatrix(CustomString * firstStr, CustomString * secondSt
 	string _secondStr = secondStr->GetStr();
 
 	return new Matrix(CustomString::GetArray(firstStr->GetStr(), _secondStr), _secondStr.length() + 1);
-}
-
-CustomString::~CustomString()
-{
-	this->str.clear();
 }

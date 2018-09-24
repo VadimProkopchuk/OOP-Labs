@@ -11,8 +11,20 @@ class Matrix
 		int size;
 
 	public:
-		Matrix(string*, int);
+		Matrix(string* array, int size) {
+
+			this->matrix = array;
+			this->size = size;
+		}
+
+		~Matrix() {
+			for (int i = 0; i < this->size; i++) {
+				this->matrix[i].clear();
+			}
+
+			delete[] this->matrix;
+		}
+
 		void WriteToConsole();
-		~Matrix();
 };
 
