@@ -11,6 +11,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L3", "L3\L3.vcxproj", "{AC4
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L4", "L4\L4.vcxproj", "{574827B3-F344-4F9A-B739-51E5FDB080B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2162D4B4-466F-43B1-9C16-7F581330E430}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\ASUS\Downloads\OOP-Lr4.svg = C:\Users\ASUS\Downloads\OOP-Lr4.svg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

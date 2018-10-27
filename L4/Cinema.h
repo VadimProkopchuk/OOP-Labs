@@ -1,25 +1,23 @@
 #pragma once
 
-#include <string>
-
-using namespace std;
-
-class Cinema
+class Cinema : public BaseCinema
 {
-	private:
-		string address;
-		string name;
+	public:
+		enum Type {
+			None,
+			ThreeD,
+			DriveIn,
+			Imax
+		};
+
+	protected:
+		Cinema::Type type = None;
 
 	public:
-		Cinema(string address, string name) {
-			this->address = address;
-			this->name = name;
-		}
+		using BaseCinema::BaseCinema;
 
-		void write();
+		Cinema(const std::string& address, const std::string& name, Cinema::Type type)
+			: BaseCinema(address, name), type(type) {}
 
-		~Cinema() {
-			this->address.clear();
-			this->name.clear();
-		}
+		virtual void write();
 };

@@ -3,20 +3,15 @@
 #include <string>
 #include "Cinema.h"
 
-using namespace std;
-
-class ImaxCinema : Cinema
+class ImaxCinema : public Cinema
 {
-private:
-	int sizeX;
-	int sizeY;
+	private:
+		int sizeX;
+		int sizeY;
 
-public:
-	ImaxCinema(string address, string name, int sizeX, int sizeY) : Cinema(address, name) {
-		this->sizeX = sizeX;
-		this->sizeY = sizeY;
-	}
-
-	void write();
-	~ImaxCinema() {}
+	public:
+		ImaxCinema(const std::string& address, const std::string& name, int sizeX, int sizeY)
+			: Cinema(address, name, Imax), sizeX(sizeX), sizeY(sizeY) { }
+		void write();
+		~ImaxCinema() {}
 };

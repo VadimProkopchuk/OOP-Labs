@@ -1,13 +1,11 @@
 #include "stdafx.h"
-#include "Cinema.h"
-#include "DriveInCinema.h"
 #include <iostream>
 
 void DriveInCinema::write()
 {
-	cout << endl;
+	std::cout << std::endl;
 	Cinema::write();
-	cout << "Max Cars: " << this->maxCars << endl;
-	cout << "Radio Frequency" << this->radioFrequency << endl;
-	cout << endl;
+	std::cout << "Max Cars: " << this->maxCars << std::endl;
+	std::cout << "Radio Frequency: " << this->radioFrequency << std::endl;
+	std::cout << std::endl;
 }

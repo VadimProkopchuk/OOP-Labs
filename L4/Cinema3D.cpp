@@ -1,13 +1,11 @@
 #include "stdafx.h"
 #include <iostream>
-#include "Cinema3D.h"
-#include "Cinema.h"
 
 void Cinema3D::write()
 {
-	cout << endl;
+	std::cout << std::endl;
 	Cinema::write();
-	cout << "Volume Type: " << this->volumeType << endl;
-	cout << "Count of 3D films: " << this->countOf3DFilms << endl;
-	cout << endl;
+	std::cout << "Volume Type: " << this->volumeType << std::endl;
+	std::cout << "Count of 3D films: " << this->countOf3DFilms << std::endl;
+	std::cout << std::endl;
 }

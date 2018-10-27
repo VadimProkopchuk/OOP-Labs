@@ -33,6 +33,9 @@
     <ClInclude Include="DriveInCinema.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="BaseCinema.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -53,8 +56,8 @@
     <ClCompile Include="DriveInCinema.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="C:\Users\ASUS\Downloads\ClassDiagrams.pdf" />
+    <ClCompile Include="BaseCinema.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

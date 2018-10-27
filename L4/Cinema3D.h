@@ -1,22 +1,14 @@
 #pragma once
-#include "Cinema.h"
 
-using namespace std;
-
-class Cinema3D : Cinema
+class Cinema3D : public Cinema
 {
-private:
-	string volumeType;
-	int countOf3DFilms;
+	private:
+		std::string volumeType;
+		int countOf3DFilms;
 
-public:
-	Cinema3D(string address, string name, string voluemType, int countOf3DFilms) 
-		: Cinema(address, name) {
-		this->volumeType = voluemType;
-		this->countOf3DFilms = countOf3DFilms;
-	}
-
-	void write();
-
-	~Cinema3D(){}
+	public:
+		Cinema3D(const std::string& address, const std::string& name, const std::string& volumeType, int countOf3DFilms) 
+			: Cinema(address, name, ThreeD), volumeType(volumeType), countOf3DFilms(countOf3DFilms) { }
+		void write();
+		~Cinema3D() {}
 };
