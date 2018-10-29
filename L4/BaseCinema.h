@@ -10,6 +10,6 @@ class BaseCinema
 
 	public:
 		BaseCinema(const std::string& address, const std::string& name) : address(address), name(name) { }
-		void virtual write() {}
+		void virtual write() = 0;
 		~BaseCinema() {}
 };
