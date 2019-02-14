@@ -5,24 +5,19 @@
 using namespace std;
 
 namespace L3 {
-	class Matrix
+	template <class T> class Matrix
 	{
 	private:
-		string * matrix;
-		int size;
+		T** matrix;
+		int m;
+		int n;
 
 	public:
-		Matrix(string* array, int size) {
-
-			this->matrix = array;
-			this->size = size;
-		}
+		Matrix(T** array, int m, int n) : matrix(array), m(m), n(n) { }
 
 		~Matrix() {
-			for (int i = 0; i < this->size; i++) {
-				this->matrix[i].clear();
-			}
-
+			for (int i = 0; i < m; i++)
+				delete[] this->matrix[i];
 			delete[] this->matrix;
 		}
 

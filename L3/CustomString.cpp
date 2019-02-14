@@ -8,23 +8,23 @@
 using namespace std;
 
 namespace L3 {
-	string* CustomString::GetArray(string str1, string str2)
+	char** CustomString::GetArray(string str1, string str2)
 	{
 		int countOfLines = str2.length() + 1;
-		string* res = new string[countOfLines];
-		char* line = new char[str1.length()];
+		char** res = new char*[countOfLines];
 
-		res[0] = str1;
+		res[0] = new char[str1.length()];
 
-		for (int i = 1; i < countOfLines; i++) {
-			for (int j = 0; j < str1.length(); j++) {
-				line[j] = j == 0 ? str2[i - 1] : (str2[i - 1] + str1[j] - str1[0]) % 256;
-			}
-
-			res[i] = string(line, str1.length());
+		for (int i = 0; i < str1.length(); i++) {
+			res[0][i] = str1.c_str()[i];
 		}
 
-		delete line;
+		for (int i = 1; i < countOfLines; i++) {
+			res[i] = new char[str1.length()];
+			for (int j = 0; j < str1.length(); j++) {
+				res[i][j] = j == 0 ? str2[i - 1] : (str2[i - 1] + str1[j] - str1[0]) % 256;
+			}
+		}
 
 		return res;
 	}
@@ -44,9 +44,10 @@ namespace L3 {
 		return this->str;
 	}
 
-	Matrix* CustomString::operator *(CustomString* str) {
+	Matrix<char>* CustomString::operator *(CustomString* str) {
 		string _secondStr = str->GetStr();
 
-		return new Matrix(CustomString::GetArray(this->GetStr(), _secondStr), _secondStr.length() + 1);
+		return new Matrix<char>(CustomString::GetArray(this->GetStr(), _secondStr), 
+			_secondStr.length() + 1, this->GetStr().length());
 	}
 }

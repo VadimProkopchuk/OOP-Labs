@@ -8,13 +8,11 @@
 using namespace std;
 
 namespace L3 {
-	void Matrix::WriteToConsole()
-	{
-		for (int i = 0; i < this->size; i++) {
-			string line = this->matrix[i];
-
-			for (int j = 0; j < line.length(); j++) {
-				cout << line[j] << " ";
+	template<class T> 
+	void Matrix<T>::WriteToConsole() {
+		for (int i = 0; i < this->m; i++) {
+			for (int j = 0; j < this->n; j++) {
+				cout << string(1, this->matrix[i][j]) << " ";
 			}
 
 			cout << endl;
